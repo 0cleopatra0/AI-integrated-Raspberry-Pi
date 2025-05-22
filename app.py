@@ -20,22 +20,22 @@ qa_collection = db['qa_history']
 # Health check
 try:
     client.admin.command('ping')
-    print("✅ MongoDB connection: SUCCESS")
+    print("MongoDB connection: SUCCESS")
 except Exception as e:
-    print("❌ MongoDB connection ERROR:", e)
+    print(" MongoDB connection ERROR:", e)
 # Pre-warm model in background
 def warmup_model():
     try:
-        print("🔥 Warming up the model...")
+        print("Warming up the model...")
         _ = requests.post(f"{OLLAMA_HOST}/api/generate", json={
             "model": OLLAMA_MODEL,
             "prompt": "Hello",
             "num_predict": 1,
             "stream": False
         }, timeout=600)
-        print("✅ Model is warmed up.")
+        print("Model is warmed up.")
     except Exception as e:
-        print("❌ Model warmup failed:", e)
+        print("Model warmup failed:", e)
 Thread(target=warmup_model).start()
 # Load user config if exists
 def load_user_config():
