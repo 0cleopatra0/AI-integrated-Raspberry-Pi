@@ -1,4 +1,4 @@
-# NASPI Quiz Pi
+# AI-INTEGRATED-RASPBERRY-PI
 
 A Raspberry Pi-based quiz application designed for educational and entertainment purposes. This project allows users to create, manage, and participate in quizzes with ease.
 
